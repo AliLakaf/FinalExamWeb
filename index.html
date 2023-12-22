@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="jquery.js" defer></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<p>Répertoires de recettes communautaires</p>
+
+
+<body class = "container">
+<main class = row>
+    <form onsubmit="ajouter()" class = "col-6">   <!--on met la fonction pour que sa se lance au départ-->
+        <h1>Ajouter une recette</h1>
+        <label for = "nomrecette">Nom de la recette</label>
+        <input class = "form-control" type = "text" name = "nomrecette" id = "nomrecette"> <!--Le form-control permet juste de mettre beau les input et les label -->
+        <p class = "text-danger" id = "ErreurNomRecette">Ce champ doit être rempli*</p>
+        <br>
+
+        <!--La liste des ingrédients-->
+        <section class = "col">
+            <label for = "ingredient">Ingrédients</label>
+            <input class = "form-control" type = "text" name = "ingredient" id = "ingredient1" placeholder="Ingrédient 1">
+            <br>
+            <input class = "form-control" type = "text" name = "ingredient" id = "ingredient2" placeholder="Ingrédient 2">
+            <br>
+            <input class = "form-control" type = "text" name = "ingredient" id = "ingredient3" placeholder="Ingrédient 3">
+            <br>
+            <input class = "form-control" type = "text" name = "ingredient" id = "ingredient4" placeholder="Ingrédient 4">
+            <br>
+            <input class = "form-control" type = "text" name = "ingredient" id = "ingredient5" placeholder="Ingrédient 5">
+        </section>
+        <p class = "text-danger" id = "ErreurIngredient">Il doit y avoir au minimum 2 ingrédients*</p>  <!--Utilisation de bootstrap pour mettre les erreurs en rouge-->
+        <br>
+
+        <!--La liste des quantités-->
+        <section class = "col">
+            <input class = "form-control" type = "number" name = "Quantite" id = "quantite1" min="1" placeholder="Quantité 1">
+            <br>
+            <input class = "form-control" type = "number" name = "quantite" id = "quantite2" min="1" placeholder="Quantité 2">
+            <br>
+            <input class = "form-control" type = "number" name = "quantite" id = "quantite3" min="1" placeholder="Quantité 3">
+            <br>
+            <input class = "form-control" type = "number" name = "quantite" id = "quantite4" min="1" placeholder="Quantité 4">
+            <br>
+            <input class = "form-control" type = "number" name = "quantite" id = "quantite5" min="1" placeholder="Quantité 5">
+        </section>
+        <p class = "text-danger" id = "ErreurQuantite">Il doit y avoir au minimum 1 quantité par ingrédient*</p><!--Utilisation de bootstrap pour mettre les erreurs en rouge-->
+        <br>
+
+        <label for="instructions">Instructions</label>
+        <textarea id="instructions" name="instructions" rows="5" cols="85"></textarea>
+        <p class = "text-danger" id = "ErreurInstructions">Il doit y avoir des instructions pour la recette*</p> <!--Utilisation de bootstrap pour mettre les erreurs en rouge-->
+
+        <section>
+            <button id ="submit" class = "btn btn-primary">Ajouter la recette</button> <!--Utilisation de bootstrap pour mettre en couleur -->
+        </section>
+    </form>
+
+    <!--Permet d'avoir la page en 2-->
+    <section class = "col-6">
+        <h1>Recette</h1>
+        <section>
+            <ul id = "recette_fait" class = "row"></ul>   <!--Avec le jquery on rempli la liste ici-->
+            <p class = "alert alert-danger d-none" role = "alert"></p> <!--Utilisation de bootstrap pour erreur-->
+        </section>
+    </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+[
+  {
+    "ingredient":"North",
+    "quantite":"3",
+    "id":"1"
+  },
+
+  {
+    "ingredient":"Granite",
+    "quantite":"2",
+    "id":"2"
+  },
+
+  {
+    "ingredient":"lavender",
+    "quantite":"4",
+    "id":"3"
+  },
+
+  {
+    "ingredient":"and",
+    "quantite":"2",
+    "id":"4"
+  }
+]
